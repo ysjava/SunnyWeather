@@ -15,17 +15,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    suspend fun <T> Call<T>.await(): T {
-        return suspendCoroutine {
-            enqueue(object : Callback<T>{
-                override fun onFailure(call: Call<T>, t: Throwable) {
 
-                }
-
-                override fun onResponse(call: Call<T>, response: Response<T>) {
-                }
-
-            })
-        }
-    }
 }
